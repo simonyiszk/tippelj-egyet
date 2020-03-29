@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Tippelj egyet!</title>
+		<meta charset="utf-8" />
+		<style>
+			img{
+				flex: 0.3;
+			}
+			button{
+				flex: 0.2;
+			}
+		</style>
+	</head>
+	<body style="background-color: grey;">
+		<div style="display: flex; justify-content: space-between; align-content: stretch;">
+			<img id="img1" src="/minta.jpg"/>
+			<img id="img2" src="/minta.jpg"/>
+			<img id="img3" src="/minta.jpg"/>
+		</div>
+		<div style="display: flex; justify-content: space-between; align-content: stretch; margin-top: 20px;">
+			<button type="button" onClick="ws.send('UN')">Új osztás</button>
+			<button type="button" onClick="ws.send('FF')">Felfed</button>
+			<button type="button" onClick="ws.send('UM')">Új osztás a másiknak</button>
+		</div>
+		<script>
+			function uuidv4() { //Source: https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
+ 				 return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+			                (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+				  );
+			}
+			var token = "/{{ session_id }}/" + uuidv4();
+			var imgset;
+
+			function show(){
+				for (var key in imgset){
+					document.getElementById(key).src="/images/" + imgset[key];
+				}
+			}
+
+			ws = new WebSocket("ws://{{host}}:8765" + token)
+			ws.onmessage = function(event){
+				    obj = JSON.parse(event.data);
+				    console.debug(obj)
+				    if ( obj["command"] == "show" )
+					show();
+				    else{
+					console.debug("Imgset update");
+					imgset = obj["imgset"];
+				    }
+			    };
+		</script>
+	</body>
+</html>
