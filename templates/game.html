@@ -20,8 +20,6 @@
 		</div>
 		<div style="display: flex; justify-content: space-between; align-content: stretch; margin-top: 20px;">
 			<button type="button" onClick="ws.send('UN')">Új osztás</button>
-			<button type="button" onClick="ws.send('FF')">Felfed</button>
-			<button type="button" onClick="ws.send('UM')">Új osztás a másiknak</button>
 		</div>
 		<script>
 			function uuidv4() { //Source: https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
@@ -42,12 +40,9 @@
 			ws.onmessage = function(event){
 				    obj = JSON.parse(event.data);
 				    console.debug(obj)
-				    if ( obj["command"] == "show" )
+				    imgset = obj["imgset"];
+				    if ( obj["command"] == "update" )
 					show();
-				    else{
-					console.debug("Imgset update");
-					imgset = obj["imgset"];
-				    }
 			    };
 		</script>
 	</body>
