@@ -3,7 +3,7 @@ Tippelj egyet!
 
 Telepítés:
 
-pip3 install flask websockets json asyncio
+pip3 install flask websockets
 
 A kártyáidat másold be az assets/images mappába, a nyitóképet rakd az assets/minta.jpg helyre.
 
