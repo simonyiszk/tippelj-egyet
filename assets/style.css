@@ -1,0 +1,51 @@
+:root {
+  --text-color: #555;
+  --background-color: white;
+}
+
+body {
+  font-family: "Helvetica", "Arial", sans-serif;
+  color: var(--text-color);
+  text-align: center;
+
+}
+
+#new-game {
+  padding-top: 200px;
+  font-size: 3rem;
+}
+
+#new-game-label {
+  padding-bottom: 1rem;
+}
+
+#new-game-input {
+  font-size: 1.3rem;
+  width: 50%;
+}
+
+#cards {
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+  padding-bottom: 2rem;
+}
+
+#cards img {
+  flex: 0.3;
+}
+
+#new-button {
+  margin: 0 auto;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  border: 2px solid var(--text-color);
+  background-color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#new-button:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
