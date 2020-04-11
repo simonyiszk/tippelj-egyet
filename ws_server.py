@@ -12,6 +12,8 @@ sessions = dict()
 
 # URL format /token/userid
 async def server(websocket, path):
+    print("Connect with: " + path)
+
     token = path.split('/')[1] 
     user  = path.split('/')[2] 
 
