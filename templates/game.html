@@ -36,7 +36,7 @@
 				}
 			}
 
-			ws = new WebSocket("ws://{{host}}:8765" + token)
+			ws = new WebSocket("{{wsuri}}/" + token)
 			ws.onmessage = function(event){
 				    obj = JSON.parse(event.data);
 				    console.debug(obj)
