@@ -3,10 +3,12 @@
 <head>
 	<title>Tippelj egyet! -- Új játék</title>
 	<meta charset='utf-8' />
+	<link rel="stylesheet" href="/style.css">
 </head>
-<body style='background-color: grey;'>
-<div style='display: flex; justify-content: center; margin-top: 200px;'>
-	<label for='url' style='font-weight: bold; color: white;'>Új játék linkje:</label><input style='width: 40%;' type='text' id='url' autofocus autocomplete='off' value='{{url}}'>
+<body>
+<div id='new-game'>
+	<label for='url' id='new-game-label'>Új játék linkje</label><br>
+	<input id='new-game-input' type='text' id='url' autofocus autocomplete='off' value='{{url}}'>
 </div>
 </body>
 </html>
