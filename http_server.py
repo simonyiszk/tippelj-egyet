@@ -5,7 +5,7 @@ import uuid
 
 host='hostname_of_the_server'
 
-app = Flask(__name__, static_folder='assets/')
+app = Flask(__name__, static_url_path='', static_folder='assets/')
 
 @app.route('/start_game/<token>')
 def servegame(token):
