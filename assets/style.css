@@ -49,3 +49,9 @@ body {
   background-color: var(--text-color);
   color: var(--background-color);
 }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 2.5rem;
+}

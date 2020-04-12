@@ -12,7 +12,7 @@ app = Flask(__name__, static_url_path='', static_folder='assets/')
 def servegame(token):
     return render_template('game.html', session_id=escape(token), wsuri=wsuri)
 
-@app.route('/new_game')
+@app.route('/')
 def newgame():
     return render_template('create_game.html', url='http://' + host + '/start_game/' + str(uuid.uuid1()))
 
