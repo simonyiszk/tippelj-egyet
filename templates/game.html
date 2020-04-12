@@ -32,14 +32,21 @@
 				}
 			}
 
-			ws = new WebSocket("{{wsuri}}/" + token)
-			ws.onmessage = function(event){
-				    obj = JSON.parse(event.data);
-				    console.debug(obj)
-				    imgset = obj["imgset"];
-				    if ( obj["command"] == "update" )
-					show();
-			    };
+			function init_ws(){
+				ws = new WebSocket("{{wsuri}}/" + token)
+				ws.onmessage = function(event){
+					    obj = JSON.parse(event.data);
+					    console.debug(obj)
+					    imgset = obj["imgset"];
+					    if ( obj["command"] == "update" )
+						show();
+				    };
+				ws.onerror = function(event) {
+					setTimeout(init_ws,1000);
+				};
+				ws.onclose = ws.onerror;
+			}
+			init_ws();
 		</script>
 	</body>
 </html>
