@@ -12,9 +12,9 @@
 	</head>
 	<body>
 		<div id="cards">
-			<img id="img1" src="/bal.png"/>
-			<img id="img2" src="/kozep.png"/>
-			<img id="img3" src="/jobb.png"/>
+			<img id="img1" src="https://raw.githubusercontent.com/simonyiszk/tippelj-egyet/master/assets/bal.png"/>
+			<img id="img2" src="https://raw.githubusercontent.com/simonyiszk/tippelj-egyet/master/assets/kozep.png"/>
+			<img id="img3" src="https://raw.githubusercontent.com/simonyiszk/tippelj-egyet/master/assets/jobb.png"/>
 		</div>
 		<button id="new-button" type="button" onclick="ws.send('UN')">Új osztás</button>
 		<script>
@@ -28,7 +28,7 @@
 
 			function show(){
 				for (var key in imgset){
-					document.getElementById(key).src="/images/" + imgset[key];
+					document.getElementById(key).src="https://raw.githubusercontent.com/simonyiszk/tippelj-egyet/master/assets/images/" + imgset[key];
 				}
 			}
 
