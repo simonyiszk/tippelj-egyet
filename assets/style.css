@@ -3,15 +3,34 @@
   --background-color: white;
 }
 
+html {
+  overflow: hidden;
+}
+
 body {
   font-family: "Helvetica", "Arial", sans-serif;
   color: var(--text-color);
   text-align: center;
+  height: 100vh;
+  margin: 0;
+  background: rgb(99,188,71);
+  background: linear-gradient(0deg, rgba(99,188,71,1) 0%, rgba(255,255,255,1) 50%);
+}
 
+#gamebody {
+  background: white;
+}
+
+#text p {
+  width: 40%;
+  margin: 0.5rem auto 0;
+  font-size: larger;
+  text-align: justify;
 }
 
 #new-game {
-  padding-top: 200px;
+  margin-top: 8rem;
+  margin-bottom: 3rem;
   font-size: 3rem;
 }
 
@@ -24,19 +43,8 @@ body {
   width: 50%;
 }
 
-#cards {
-  display: flex;
-  justify-content: space-between;
-  align-content: stretch;
-  padding-bottom: 2rem;
-}
-
-#cards img {
-  flex: 0.3;
-}
-
 #new-button {
-  margin: 0 auto;
+  margin: 0.5rem auto;
   padding: 0.3rem 0.5rem;
   border-radius: 5px;
   border: 2px solid var(--text-color);
@@ -50,8 +58,48 @@ body {
   color: var(--background-color);
 }
 
+#cards {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  width: 100vw;
+  max-height: calc(100vh - 4.6rem);
+}
+
+#cards img {
+  flex: 0 1 32.5%;
+  object-fit: contain;
+}
+
+.logo {
+  height: 7rem;
+  width: auto;
+}
+
+#collabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem auto 7rem;
+}
+
+#collabs>div {
+  flex: 0 1 25%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#footer {
+  margin-top: 5rem;
+}
+
 footer {
   position: absolute;
-  bottom: 0;
-  height: 2.5rem;
+  bottom: 0.5rem;
+  width: 100%;
+  text-align: center;
 }
