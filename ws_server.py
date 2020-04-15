@@ -27,7 +27,7 @@ async def server(websocket, path):
             print(f"Got command: {command} from {user} in session {token}")
 
             if command == 'UN':
-               new_images = random.choices(images, k=3)
+               new_images = random.sample(images, k=3)
                ret = {
                         "command": "update",
                         "imgset": {
