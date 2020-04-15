@@ -4,19 +4,14 @@
 		<title>Tippelj egyet!</title>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="/style.css">
-		<style>
-			button{
-				flex: 0.2;
-			}
-		</style>
 	</head>
-	<body>
+	<body id='gamebody'>
+		<button id="new-button" type="button" onclick="ws.send('UN')">Új osztás</button>
 		<div id="cards">
 			<img id="img1" src="https://raw.githubusercontent.com/simonyiszk/tippelj-egyet/master/assets/bal.png"/>
 			<img id="img2" src="https://raw.githubusercontent.com/simonyiszk/tippelj-egyet/master/assets/kozep.png"/>
 			<img id="img3" src="https://raw.githubusercontent.com/simonyiszk/tippelj-egyet/master/assets/jobb.png"/>
 		</div>
-		<button id="new-button" type="button" onclick="ws.send('UN')">Új osztás</button>
 		<script>
 			function uuidv4() { //Source: https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
  				 return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
