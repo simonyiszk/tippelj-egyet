@@ -8,9 +8,9 @@
 	<body id='gamebody'>
 		<button id="new-button" type="button" onclick="ws.send('UN')">Új osztás</button>
 		<div id="cards">
-			<img id="img1" src="https://raw.githubusercontent.com/simonyiszk/tippelj-egyet/master/assets/bal.png"/>
-			<img id="img2" src="https://raw.githubusercontent.com/simonyiszk/tippelj-egyet/master/assets/kozep.png"/>
-			<img id="img3" src="https://raw.githubusercontent.com/simonyiszk/tippelj-egyet/master/assets/jobb.png"/>
+			<img id="img1" src="https://simonyi.bme.hu/tippelj/assets/bal.png"/>
+			<img id="img2" src="https://simonyi.bme.hu/tippelj/assets/kozep.png"/>
+			<img id="img3" src="https://simonyi.bme.hu/tippelj/assets/jobb.png"/>
 		</div>
 		<script>
 			function uuidv4() { //Source: https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
@@ -23,7 +23,7 @@
 
 			function show(){
 				for (var key in imgset){
-					document.getElementById(key).src="https://raw.githubusercontent.com/simonyiszk/tippelj-egyet/master/assets/images/" + imgset[key];
+					document.getElementById(key).src="https://simonyi.bme.hu/tippelj/assets/images/" + imgset[key];
 				}
 			}
 
