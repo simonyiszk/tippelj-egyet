@@ -28,6 +28,7 @@
 			}
 
 			function init_ws(){
+				console.debug('(re)Opening webSocket connection')
 				ws = new WebSocket("{{wsuri}}" + token)
 				ws.onmessage = function(event){
 					    obj = JSON.parse(event.data);
