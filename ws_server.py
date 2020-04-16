@@ -14,8 +14,9 @@ sessions = dict()
 async def server(websocket, path):
     print("Connect with: " + path)
 
-    token = path.split('/')[1] 
-    user  = path.split('/')[2] 
+    # path.splot('/')[1] == ws
+    token = path.split('/')[2] 
+    user  = path.split('/')[3] 
 
     if token not in sessions:
         sessions[token] = dict()
