@@ -40,9 +40,13 @@ async def server(websocket, path):
                for i in sessions[token]:
                    await sessions[token][i].send(json.dumps(ret))
     finally:
-        del sessions[token][user]
-        if len(sessions[token]) == 0:
-            del sessions[token]
+        try:
+            del sessions[token][user]
+            if len(sessions[token]) == 0:
+                del sessions[token]
+        except KeyError:
+            pass
+
 
 start_server = websockets.serve(server, "0.0.0.0", 8765)
 
