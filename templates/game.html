@@ -13,12 +13,6 @@
 			<img id="img3" src="https://simonyi.bme.hu/tippelj/assets/jobb.png"/>
 		</div>
 		<script>
-			function uuidv4() { //Source: https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
- 				 return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
-			                (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-				  );
-			}
-			var token = "/{{ session_id }}/" + uuidv4();
 			var imgset;
 
 			function show(){
@@ -29,7 +23,7 @@
 
 			function init_ws(){
 				console.debug('(re)Opening webSocket connection')
-				ws = new WebSocket("{{wsuri}}" + token)
+				ws = new WebSocket("{{wsuri}}")
 				ws.onmessage = function(event){
 					    obj = JSON.parse(event.data);
 					    console.debug(obj)
