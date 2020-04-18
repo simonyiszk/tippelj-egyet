@@ -23,7 +23,7 @@
 
 			function init_ws(){
 				console.debug('(re)Opening webSocket connection')
-				ws = new WebSocket("{{wsuri}}")
+				ws = new WebSocket("{{wsuri}}/{{session_id}}")
 				ws.onmessage = function(event){
 					    obj = JSON.parse(event.data);
 					    console.debug(obj)
