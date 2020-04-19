@@ -9,6 +9,12 @@
 <div id='new-game'>
 	<label for='url' id='new-game-label'>Új játék linkje</label><br>
 	<input id='new-game-input' type='text' id='url' autofocus autocomplete='off' value='{{url}}'>
+	<div class="tooltip">
+		<button onclick="copyLink()" onmouseout="outFunc()">
+			<span class="tooltip-text" id="copy-tooltip">Link másolása vágólapra</span>
+			Másolás
+		</button>
+	</div>
 </div>
 <div id='text'>
 	<p>
@@ -26,5 +32,20 @@
 		<a href="/impresszum.html"><img src="https://simonyi.bme.hu/resources/simonyi_black.svg" width="400px"></a>
 	</div>
 </footer>
+<script>
+	function copyLink() {
+		var copyText = document.getElementById("new-game-input");
+		copyText.select();
+		copyText.setSelectionRange(0, 99999);
+		document.execCommand("copy");
+
+		var tooltip = document.getElementById("copy-tooltip");
+		tooltip.innerHTML = "Kimásolva";
+	}
+	function outFunc() {
+		var tooltip = document.getElementById("copy-tooltip");
+		tooltip.innerHTML = "Link másolása vágólapra";
+	}
+</script>
 </body>
 </html>
